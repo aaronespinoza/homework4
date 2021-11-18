@@ -20,7 +20,7 @@ Below the list element I want a paragraph that will reflect if the answer was ri
 For the game logic
 - function with an if/else
 -add array of correct answers
---if userChoice === correct   textContent "correct" call function to next question
+--if userChoice === correct   add one to gamerScore variable textContent "correct" call function to next question
 --else textContent "Wrong" subtract 5 seconds from current time call funtion to nextQ as in next question
 
 nextQ function will call clearQ function and replace text Content in the header and the list
@@ -36,3 +36,5 @@ add form for highscore
 On highscores page
 -play again button will call the startGame function
 
+I need to add a scoring function that keeps track
+-Im thinking a variable gamerScore
