@@ -29,7 +29,7 @@ function countdown() {
     }, 1000);
 }
 
-countdown();
+
 
 //Highscore Function to local storage
 
@@ -87,5 +87,27 @@ function init() {
 
 
 //Event listener for the start game
+var startButton = document.getElementById("startButton")
 
+startButton.addEventListener("click", startGame);
 
+//Start game function
+
+function startGame(){
+    startButton.disabled=true;
+    countdown
+}
+
+//Check answer function
+var correctAnswers= ["d","d",];
+
+function checkAnswer=(){
+    if(chosenAnswer===correctAnswers){
+        .textContent="Correct";
+        score++
+    }
+    else(){
+        .textContent="Wrong";
+        score--
+    }
+}
