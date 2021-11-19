@@ -38,3 +38,6 @@ On highscores page
 
 I need to add a scoring function that keeps track
 -Im thinking a variable gamerScore
+
+
+I have to remember to EVENT BUBBLE :))))))
