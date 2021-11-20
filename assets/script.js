@@ -88,16 +88,55 @@ function init() {
 
 //Event listener for the start game
 var startButton = document.getElementById("startButton")
+var questionContainerElement = document.getElementById("question-container")
 
-startButton.addEventListener("click", startGame);
-
+startButton.addEventListener("click", startGame)
 //Start game function
 
 function startGame(){
-    startButton.disabled=true;
-    countdown
+    //startButton.disabled=true;
+    startButton.classList.add('hide')
+    questionContainerElement.classList.remove("hide")
+    nextQuestion()
+    countdown()
 }
 
+//Question array
+var questions = [
+    {
+        question:"What company developed Java Script",
+        answer:"Netscape"
+    }
+    {
+        question:"Which of the following is a correct type of Pop up box in Java Script"
+        answer:"Alert"
+    }
+    {
+        question:"A string can be represented using a single or double ____"
+        answer:"quote"
+    }
+    {
+        question:"What represents a logical entity and can have only two values : true or false"
+        answer:"Boolean"
+    }
+    {
+        question:"What is an object in Java Script"
+        answer:"a collection of data"
+    }
+]
+
+function nextQuestion(){
+    resetQuestion()
+}
+
+function resetQuestion(){
+    while (answerButtonsElement)
+}
+
+function chosenAnswer(e){
+    var selectedButton= e.target
+    var
+}
 //Check answer function
 var correctAnswers= ["d","d",];
 
@@ -111,3 +150,14 @@ function checkAnswer=(){
         score--
     }
 }
+
+//add element and script inside
+
+var main =documen
+
+//loop through variable
+var divTags = document.querySelectorAll("div");
+
+for (var i = 0; i < divTags.length; i++) {
+  divTags[i].setAttribute("style", "color:blue; font-size: 30px");
+ }
