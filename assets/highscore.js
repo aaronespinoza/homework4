@@ -1,0 +1,43 @@
+var initialsInput = document.querySelector("#initials");
+var scoreInput = document.querySelector("#score");
+var enterInitialsButton = document.querySelector("#enter-initials");
+var msgDiv = document.querySelector("#msg");
+var userInitials = document.querySelector("#user-initials");
+var userScoreSpan = document.querySelector("#user-score");
+
+
+renderLastRegistered();
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+function renderLastRegistered() {
+  var initials = localStorage.getItem("initials");
+  //var score = localStorage.getItem("score");
+
+  if (!initials) {
+    return;
+  }
+
+  userInitials.textContent = initials;
+  //userScoreSpan.textContent = score;
+}
+
+enterInitialsButton.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var initials = document.querySelector("#initials").value;
+  //var score = document.querySelector("#score").value;
+
+  if (initials === "") {
+    displayMessage("error", "Initials cannot be blank");
+  } else {
+    displayMessage("success", "Initials saved successfully");
+
+    localStorage.setItem("initials", initials);
+    //localStorage.setItem("score", score);
+    renderLastRegistered();
+  }
+});
