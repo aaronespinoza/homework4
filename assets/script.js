@@ -24,7 +24,7 @@ function countdown() {
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
         // Call the `displayMessage()` function
-        displayMessage();
+        //displayMessage();
       }
     }, 1000);
 }
@@ -141,7 +141,7 @@ function chosenAnswer(e){
     var
 }
 //Check answer function
-var correctAnswers= ["d","d",];
+var correctAnswers= ["d","jj",];
 
 function checkAnswer=(){
     if(chosenAnswer===correctAnswers){
