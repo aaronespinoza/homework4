@@ -5,6 +5,7 @@ var msgDiv = document.querySelector("#msg");
 var userInitials = document.querySelector("#user-initials");
 var userScoreSpan = document.querySelector("#user-score");
 
+var storedInitials=[]
 
 renderLastRegistered();
 
@@ -41,3 +42,27 @@ enterInitialsButton.addEventListener("click", function(event) {
     renderLastRegistered();
   }
 });
+
+// The following function renders items in a highscore list as <li> elements
+function renderScores() {
+    // Clear todoList element and update todoCountSpan
+    initialsInput.innerHTML = "";
+    todoCountSpan.textContent = todos.length;
+  
+    // Render a new li for each todo
+    for (var i = 0; i < todos.length; i++) {
+      var todo = todos[i];
+  
+      var li = document.createElement("li");
+      li.textContent = todo;
+      li.setAttribute("data-index", i);
+  
+      var button = document.createElement("button");
+      button.textContent = "Complete ✔️";
+  
+      li.appendChild(button);
+      todoList.appendChild(li);
+    }
+  }
+
+renderScores()

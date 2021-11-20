@@ -95,9 +95,9 @@ startButton.addEventListener("click", startGame)
 
 function startGame(){
     //startButton.disabled=true;
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove("hide")
-    nextQuestion()
+    //startButton.classList.add('hidden')
+    //questionContainerElement.classList.remove("hidden")
+    //nextQuestion()
     countdown()
 }
 
@@ -106,31 +106,34 @@ var questions = [
     {
         question:"What company developed Java Script",
         answer:"Netscape"
-    }
+    },
     {
         question:"Which of the following is a correct type of Pop up box in Java Script"
         answer:"Alert"
-    }
+    },
     {
         question:"A string can be represented using a single or double ____"
         answer:"quote"
-    }
+    },
     {
         question:"What represents a logical entity and can have only two values : true or false"
         answer:"Boolean"
-    }
+    },
     {
         question:"What is an object in Java Script"
         answer:"a collection of data"
     }
 ]
-
-function nextQuestion(){
-    resetQuestion()
+//come back to this function
+function resetQuestion(){
+    questionContainerElement.hidden()
 }
 
-function resetQuestion(){
-    while (answerButtonsElement)
+function nextQuestion(){
+    let i=Math.floor(Math.random()*questions.length);
+    let newQuestion= questions[i]
+    questions.splice(0,i)
+    return{newQuestion, i}
 }
 
 function chosenAnswer(e){
