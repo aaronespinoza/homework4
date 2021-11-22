@@ -16,6 +16,7 @@ function startGame(){
     timerCount=10;
     //revealAnswerOptions();
     renderQuestions();
+    answersPopulation();
 }
 //Timer function
 
@@ -41,14 +42,14 @@ function countdown() {
 
 //TEST TEST TEST
 
-var questionsLocation = document.getElementById("questions").value;
+var questionsLocation = document.getElementById("questions");
 
 
 
 function renderQuestions(){
     var random = Math.floor(Math.random()*questions.length);
     //questionsLocation.textContent= random.valueOf;
-    document.getElementById("questions").textContent=questions[random];
+    questionsLocation.textContent=questions[random];
 }
 
 //Question array
@@ -75,3 +76,44 @@ questions[4]="What is an object in Java Script";
 //         //answer:"a collection of data"
 // ];
 
+//TEST TEST TEST
+
+var correctAnswers =["Netscape","Alert","quote","Boolean","a collection of data"];
+var possibleAnswers0 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers1 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers2 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers3 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers4 =["Netscape","Alert","quote","Boolean"];
+
+
+function answersPopulation(){
+    if (questions == questions[0])
+    answerOptions.children[0].textContent=possibleAnswers0[0];
+    answerOptions.children[1].textContent=possibleAnswers0[1];
+    answerOptions.children[2].textContent=possibleAnswers0[2];
+    answerOptions.children[3].textContent=possibleAnswers0[3];
+
+    if (questions == questions[1])
+    answerOptions.children[0].textContent=possibleAnswers1[0];
+    answerOptions.children[1].textContent=possibleAnswers1[1];
+    answerOptions.children[2].textContent=possibleAnswers1[2];
+    answerOptions.children[3].textContent=possibleAnswers1[3];
+
+    if (questions == questions[2])
+    answerOptions.children[0].textContent=possibleAnswers2[0];
+    answerOptions.children[1].textContent=possibleAnswers2[1];
+    answerOptions.children[2].textContent=possibleAnswers2[2];
+    answerOptions.children[3].textContent=possibleAnswers2[3];
+
+    if (questions == questions[3])
+    answerOptions.children[0].textContent=possibleAnswers3[0];
+    answerOptions.children[1].textContent=possibleAnswers3[1];
+    answerOptions.children[2].textContent=possibleAnswers3[2];
+    answerOptions.children[3].textContent=possibleAnswers3[3];
+
+    if (questions == questions[4])
+    answerOptions.children[0].textContent=possibleAnswers4[0];
+    answerOptions.children[1].textContent=possibleAnswers4[1];
+    answerOptions.children[2].textContent=possibleAnswers4[2];
+    answerOptions.children[3].textContent=possibleAnswers4[3];
+}
