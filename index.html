@@ -10,7 +10,7 @@
 <body class="m-4 bg-primary">
     <header class="d-flex">
         <a href="highscore.html"class="mr-auto p-2 bg-warning text-dark"id="highscores" href="highscore.html">Highscores</a>
-        <div class="p-2 bg-warning border border-dark" id="time" placeholder="null">Timer:</div>
+        <div class="p-2 bg-warning border border-dark visible" id="time">Timer:</div>
     </header>
     <div class="d-flex justify-content-center .mt-2">
         <section class="d-flex">
@@ -26,16 +26,18 @@
                 <button class="bg-warning d-flex mx-auto" id="startButton">Start</button>
             </div>
             
-            <div class="btn-group-vertical bg-warning d-flex justify-content-center">
-                <button type="button" class="btn btn-primary bg-warning ">Question here</button>
-                <button type="button" class="btn btn-primary bg-warning">Link</button>
-                <button type="button" class="btn btn-primary bg-warning">Link</button>
-                <button type="button" class="btn btn-primary bg-warning">Link</button>
+            <div>
+                <div id="answerOptions"class="btn-group-vertical bg-warning d-flex justify-content-center visible">
+                    <button type="button" class="btn btn-primary bg-warning">Question here</button>
+                    <button type="button" class="btn btn-primary bg-warning">Link</button>
+                    <button type="button" class="btn btn-primary bg-warning">Link</button>
+                    <button type="button" class="btn btn-primary bg-warning">Link</button>
+                </div>
             </div>
-            
         </div>
         </section>
     </div>
-<script src="assets/script.js"></script>
+    <script src="assets/testscript.js"></script>
+<!--<script src="assets/script.js"></script>-->
 </body>
 </html>

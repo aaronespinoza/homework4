@@ -1,35 +1,89 @@
+//Event listener for the start game
+var startButton = document.getElementById("startButton")
+var questionContainerElement = document.getElementById("question-container")
+
+startButton.addEventListener("click", startGame)
+//Start game function
+
+function startGame(){
+    //startButton.disabled=true;
+    //startButton.classList.add('hidden')
+    //questionContainerElement.classList.remove("hidden")
+    //nextQuestion()
+    timerCount=10;
+    countdown()
+    hideOrShow()
+    
+}
+
+
 //Timer function
 var timerEl = document.getElementById("time");
-
+var timer;
+var timerCount;
 
 
 function countdown() {
-    var timeLeft = 60;
 
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-    var timeInterval = setInterval(function () {
+    timer = setInterval(function () {
       // As long as the `timeLeft` is greater than 1
-      if (timeLeft > 1) {
+      timerCount--;
+      timerEl.textContent = timerCount;
+      if (timerCount == 0) {
         // Set the `textContent` of `timerEl` to show the remaining seconds
-        timerEl.textContent = "Timer:" + timeLeft;
+        //timerEl.textContent = "Timer:" + timeLeft;
         // Decrement `timeLeft` by 1
-        timeLeft--;
-      } else if (timeLeft === 1) {
-        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-        timerEl.textContent = "Timer:" + timeLeft;
-        timeLeft--;
-      } else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-        timerEl.textContent = '';
-        // Use `clearInterval()` to stop the timer
-        clearInterval(timeInterval);
-        // Call the `displayMessage()` function
-        //displayMessage();
+        window.open("highscore.html", "_self");
+
+        
+      // } else if (timeLeft === 1) {
+      //   // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+      //   timerEl.textContent = "Timer:" + timeLeft;
+      //   timeLeft--;
+      // } else {
+      //   // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+      //   timerEl.textContent = '';
+      //   // Use `clearInterval()` to stop the timer
+      //   clearInterval(timeInterval);
+      //   // Call the `displayMessage()` function
+      //   //displayMessage();
       }
     }, 1000);
 }
 
+//user select functions
+var answerOptions = document.getElementById("answerOptions");
 
+// answerOptions.addEventListener("click", function(event){
+//   var element = event.target;
+//   console.log(element)
+  
+//   if (element.matches(".box"))}
+
+  
+
+
+//hide the answer options
+answerOptions.style.display = "none"
+
+function hideOrShow() {
+	
+  // Select the element with id "theDIV"
+  
+  // If selected element is hidden
+  if (answerOptions.style.display === "none") {
+  
+    // Show the hidden element
+    answerOptions.style.display = "block";
+    
+    // Else if the selected element is shown
+  } else {
+  
+    // Hide the element
+    answerOptions.style.display = "none";
+  }
+}
 
 //Highscore Function to local storage
 
@@ -86,44 +140,30 @@ function init() {
   }
 
 
-//Event listener for the start game
-var startButton = document.getElementById("startButton")
-var questionContainerElement = document.getElementById("question-container")
-
-startButton.addEventListener("click", startGame)
-//Start game function
-
-function startGame(){
-    //startButton.disabled=true;
-    //startButton.classList.add('hidden')
-    //questionContainerElement.classList.remove("hidden")
-    //nextQuestion()
-    countdown()
-}
 
 //Question array
-var questions = [
-    {
-        question:"What company developed Java Script",
-        answer:"Netscape"
-    },
-    {
-        question:"Which of the following is a correct type of Pop up box in Java Script"
-        answer:"Alert"
-    },
-    {
-        question:"A string can be represented using a single or double ____"
-        answer:"quote"
-    },
-    {
-        question:"What represents a logical entity and can have only two values : true or false"
-        answer:"Boolean"
-    },
-    {
-        question:"What is an object in Java Script"
-        answer:"a collection of data"
-    }
-]
+// var questions = [
+//     {
+//         question:"What company developed Java Script",
+//         answer:"Netscape"
+//     },
+//     {
+//         question:"Which of the following is a correct type of Pop up box in Java Script"
+//         answer:"Alert"
+//     },
+//     {
+//         question:"A string can be represented using a single or double ____"
+//         answer:"quote"
+//     },
+//     {
+//         question:"What represents a logical entity and can have only two values : true or false"
+//         answer:"Boolean"
+//     },
+//     {
+//         question:"What is an object in Java Script"
+//         answer:"a collection of data"
+//     }
+// ]
 //come back to this function
 function resetQuestion(){
     questionContainerElement.hidden()
@@ -145,11 +185,11 @@ var correctAnswers= ["d","jj",];
 
 function checkAnswer=(){
     if(chosenAnswer===correctAnswers){
-        .textContent="Correct";
+        textContent="Correct";
         score++
     }
     else(){
-        .textContent="Wrong";
+        textContent="Wrong";
         score--
     }
 }

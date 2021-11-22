@@ -13,10 +13,10 @@ var storedInitials=[]
 
 renderLastRegistered();
 
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
-}
+// function displayMessage(type, message) {
+//   msgDiv.textContent = message;
+//   msgDiv.setAttribute("class", type);
+// }
 
 function renderLastRegistered() {
   var initials = localStorage.getItem("initials");
