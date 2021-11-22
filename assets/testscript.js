@@ -79,11 +79,11 @@ questions[4]="What is an object in Java Script";
 //TEST TEST TEST
 
 var correctAnswers =["Netscape","Alert","quote","Boolean","a collection of data"];
-var possibleAnswers0 =["Netscape","Alert","quote","Boolean"];
-var possibleAnswers1 =["Netscape","Alert","quote","Boolean"];
-var possibleAnswers2 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers0 =["Netscape","Apple","Doja Cat","Disney"];
+var possibleAnswers1 =["Envelope","Alert","Emergency","Package"];
+var possibleAnswers2 =["Space","Dash","quote","period"];
 var possibleAnswers3 =["Netscape","Alert","quote","Boolean"];
-var possibleAnswers4 =["Netscape","Alert","quote","Boolean"];
+var possibleAnswers4 =["API","a browser","a string","a collection of data"];
 
 
 function answersPopulation(){
