@@ -1,51 +1,75 @@
-var initialsInput = document.querySelector("#initials");
-var scoreInput = document.querySelector("#score");
-var enterInitialsButton = document.getElementById("initials");
-var msgDiv = document.querySelector("#msg");
-var userInitials = document.getElementById("user-initials");
-var userScoreSpan = document.getElementById("#user-score");
+var savedScores = document.getElementById("allScores");
 
-//my own variables
+clear.addEventListener("click", function () {
+  localStorage.clear();
+  location.reload();
+});
+ 
+  var allScores = localStorage.getItem("highscore");
+  allScores=JSON.parse(allScores);
+  if (!allscores){
+  var li = document.createtlement ("li");
+  li.textContent= "no high scores"
+  savedScores.appendChild(li)
+  }
 
-var highscoreElement = document.getElementById("highscores")
+if (allScores !== null) {
+    for (var i = 0; i < allScores.length; i++) {
+      var createli = document.createtlement ("li');
+      createLi.textContent=allScores[i].initials+""+allScores[i].score;
+      savedScores.appendChild(createli);
+    }
+  }
 
-var storedInitials=[]
 
-renderLastRegistered();
+// var initialsInput = document.querySelector("#initials");
+// var scoreInput = document.querySelector("#score");
+// var enterInitialsButton = document.getElementById("initials");
+// var msgDiv = document.querySelector("#msg");
+// var userInitials = document.getElementById("user-initials");
+// var userScoreSpan = document.getElementById("#user-score");
 
-// function displayMessage(type, message) {
-//   msgDiv.textContent = message;
-//   msgDiv.setAttribute("class", type);
+// //my own variables
+
+// var highscoreElement = document.getElementById("highscores")
+
+// var storedInitials=[]
+
+// renderLastRegistered();
+
+// // function displayMessage(type, message) {
+// //   msgDiv.textContent = message;
+// //   msgDiv.setAttribute("class", type);
+// // }
+
+// function renderLastRegistered() {
+//   var initials = localStorage.getItem("initials");
+//   //var score = localStorage.getItem("score");
+
+//   if (!initials) {
+//     return;
+//   }
+
+//   userInitials.textContent = initials;
+//   //userScoreSpan.textContent = score;
 // }
 
-function renderLastRegistered() {
-  var initials = localStorage.getItem("initials");
-  //var score = localStorage.getItem("score");
+// enterInitialsButton.addEventListener("click", function(event) {
+//   event.preventDefault();
 
-  if (!initials) {
-    return;
-  }
+//   var initials = document.querySelector("#initials").value;
+//   //var score = document.querySelector("#score").value;
 
-  userInitials.textContent = initials;
-  //userScoreSpan.textContent = score;
-}
+//   if (initials === "") {
+//     displayMessage("error", "Initials cannot be blank");
+//   } else {
+//     displayMessage("success", "Initials saved successfully");
 
-enterInitialsButton.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  var initials = document.querySelector("#initials").value;
-  //var score = document.querySelector("#score").value;
-
-  if (initials === "") {
-    displayMessage("error", "Initials cannot be blank");
-  } else {
-    displayMessage("success", "Initials saved successfully");
-
-    localStorage.setItem("initials", initials);
-    //localStorage.setItem("score", score);
-    renderLastRegistered();
-  }
-});
+//     localStorage.setItem("initials", initials);
+//     //localStorage.setItem("score", score);
+//     renderLastRegistered();
+//   }
+// });
 
 // The following function renders items in a highscore list as <li> elements
 // function renderScores() {

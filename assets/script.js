@@ -55,35 +55,36 @@ function countdown() {
 //user select functions
 var answerOptions = document.getElementById("answerOptions");
 
-// answerOptions.addEventListener("click", function(event){
-//   var element = event.target;
-//   console.log(element)
-  
-//   if (element.matches(".box"))}
-
-  
-
-
-//hide the answer options
-answerOptions.style.display = "none"
-
-function hideOrShow() {
-	
-  // Select the element with id "theDIV"
-  
-  // If selected element is hidden
-  if (answerOptions.style.display === "none") {
-  
-    // Show the hidden element
-    answerOptions.style.display = "block";
-    
-    // Else if the selected element is shown
-  } else {
-  
-    // Hide the element
-    answerOptions.style.display = "none";
-  }
+function revealQuestions () {
+  answerOptions.setAttribute("class","btn-group-vertical bg-warning d-flex justify-content-center visible")
 }
+
+
+answerOptions.addEventListener("click", function(event) {
+  var element = event.target;
+
+  if (element.matches(".invisible")) {
+    var state = element.getAttribute("data-state");
+
+    // Use an if statement to conditionally render the number on the card
+    if (state === "hidden") {
+      // If the card is clicked while the state is "hidden", we set .textContent to the number 
+      element.textContent = element.dataset.number;
+      // Using the dataset property, we change the state to visible because the user can now see the number
+      element.dataset.state = "visible";
+   
+    } else {
+      // 'Hide' the number by setting .textContent to an empty string
+      element.textContent= "";
+      // Use .setAttribute() method
+      element.setAttribute("data-state", "hidden")
+     
+    }  
+  }
+  
+});
+
+
 
 //Highscore Function to local storage
 
