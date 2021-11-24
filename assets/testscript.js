@@ -103,36 +103,37 @@ var possibleAnswers4 =["API","a browser","a string","a collection of data"];
 
 
 function answersPopulation(){
+    
     if (questionsLocation.textContent==planB0){
     answerOptions.children[0].textContent=possibleAnswers0[0];
     answerOptions.children[1].textContent=possibleAnswers0[1];
     answerOptions.children[2].textContent=possibleAnswers0[2];
     answerOptions.children[3].textContent=possibleAnswers0[3];
     }
-    if (questionsLocation.textContent==planB1){
+    else if (questionsLocation.textContent==planB1){
     answerOptions.children[0].textContent=possibleAnswers1[0];
     answerOptions.children[1].textContent=possibleAnswers1[1];
     answerOptions.children[2].textContent=possibleAnswers1[2];
     answerOptions.children[3].textContent=possibleAnswers1[3];
     }
-    if (questionsLocation.textContent==planB2){
+    else if (questionsLocation.textContent==planB2){
     answerOptions.children[0].textContent=possibleAnswers2[0];
     answerOptions.children[1].textContent=possibleAnswers2[1];
     answerOptions.children[2].textContent=possibleAnswers2[2];
     answerOptions.children[3].textContent=possibleAnswers2[3];
     }
-    if (questionsLocation.textContent==planB3){
+    else if (questionsLocation.textContent==planB3){
     answerOptions.children[0].textContent=possibleAnswers3[0];
     answerOptions.children[1].textContent=possibleAnswers3[1];
     answerOptions.children[2].textContent=possibleAnswers3[2];
     answerOptions.children[3].textContent=possibleAnswers3[3];
     }
-    if (questionsLocation.textContent==planB4)
+    else if (questionsLocation.textContent==planB4){
     answerOptions.children[0].textContent=possibleAnswers4[0];
     answerOptions.children[1].textContent=possibleAnswers4[1];
     answerOptions.children[2].textContent=possibleAnswers4[2];
     answerOptions.children[3].textContent=possibleAnswers4[3];
-};
+}};
 
 //TEST TEST TEST
 
