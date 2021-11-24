@@ -1,7 +1,7 @@
 var answerOptions = document.getElementById("answerOptions");
 
 function revealAnswerOptions () {
-  answerOptions.style.display = "block"
+  answerOptions.classList.remove("invisible");
 }
 
 var startButton = document.getElementById("startButton");
@@ -13,8 +13,8 @@ startButton.addEventListener("click", startGame)
 function startGame(){
     countdown();
     startButton.disabled=true;
-    timerCount=100;
-    //revealAnswerOptions();
+    timerCount=50;
+    revealAnswerOptions();
     renderQuestions();
     answersPopulation();
 }
